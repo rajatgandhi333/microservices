@@ -7,6 +7,7 @@
         <module>rsg-app-config</module>
         <module>kafka</module>
         <module>rsg-common-config</module>
+        <module>rsg-config-server</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -33,6 +34,7 @@
         <spring-retry.version>2.0.2</spring-retry.version>
         <kafka-avro-serializer.version>7.1.1</kafka-avro-serializer.version>
         <kafka-streams-avro-serde.version>7.4.0</kafka-streams-avro-serde.version>
+        <spring-cloud-dependencies.version>2022.0.4</spring-cloud-dependencies.version>
     </properties>
 
     <!--because there's some issue in kafka-->
@@ -91,6 +93,27 @@
                 <artifactId>spring-retry</artifactId>
                 <version>${spring-retry.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-config-server</artifactId>
+                <version>${spring-cloud.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-gateway</artifactId>
+                <version>${spring-cloud.version}</version>
+            </dependency>
+
 
 
             <!--local-->
@@ -181,6 +204,7 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
