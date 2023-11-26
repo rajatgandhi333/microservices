@@ -34,3 +34,22 @@ kafka-producer-config:
   linger-ms: 5
   request-timeout-ms: 60000
   retry-count: 5
+
+spring:
+  application:
+    name: twitter-stream
+  profiles:
+    active: twitter-stream
+  cloud:
+    config:
+      name: twitter-stream,config-client
+      username: spring_cloud_user
+      uri: http://localhost:8888
+      password: '1234'
+
+log:
+  app-name: twitter-stream
+
+twitter-to-kafka-service:
+  enable-mock-tweets: false
+

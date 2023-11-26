@@ -13,7 +13,7 @@ spring:
     config:
       server:
         git:
-          uri: ##https://github.com/agelenler/spring-cloud-config-server-repository
+          uri: https://github.com/rajatgandhi333/rsg-spring-cloud-config-server-repository.git
           default-label: main
           username: '****'
           password: '****'
